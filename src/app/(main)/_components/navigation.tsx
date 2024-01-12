@@ -13,6 +13,7 @@ import {
   MouseEvent as ReactMouseEvent,
   useEffect,
 } from 'react'
+import { UserItem } from './user-item'
 
 export const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false)
@@ -117,7 +118,7 @@ export const Navigation = () => {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action items</p>
+          <UserItem />
         </div>
 
         <div className="mt-4">
