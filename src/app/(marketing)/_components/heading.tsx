@@ -39,7 +39,7 @@ export const Heading = () => {
       )}
 
       {!isLoading && !isAuthenticated && (
-        <SignInButton mode="modal">
+        <SignInButton mode="modal" afterSignInUrl="/documents">
           <Button>
             Get Jotion Free <ArrowRight className="h-4 w-4 ml-2" />
           </Button>
