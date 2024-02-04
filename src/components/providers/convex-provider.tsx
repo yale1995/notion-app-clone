@@ -4,7 +4,7 @@ import { ClerkProvider, useAuth } from '@clerk/clerk-react'
 import { convex } from '@/lib/convex-client'
 import { ConvexProviderWithClerk } from 'convex/react-clerk'
 import { ReactNode } from 'react'
-import { envClient } from '@/env-client'
+import { env } from '@/env'
 
 interface ConvexProviderProps {
   children: ReactNode
@@ -12,7 +12,7 @@ interface ConvexProviderProps {
 
 export const ConvexProvider = ({ children }: ConvexProviderProps) => {
   return (
-    <ClerkProvider publishableKey={envClient.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider publishableKey={env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
         {children}
       </ConvexProviderWithClerk>

@@ -1,6 +1,6 @@
 'use client'
 
 import { ConvexReactClient } from 'convex/react'
-import { envClient } from '@/env-client'
+import { env } from '@/env'
 
-export const convex = new ConvexReactClient(envClient.NEXT_PUBLIC_CONVEX_URL)
+export const convex = new ConvexReactClient(env.NEXT_PUBLIC_CONVEX_URL)
