@@ -8,7 +8,7 @@ import { Item } from './item'
 import { cn } from '@/lib/utils'
 import { FileIcon } from 'lucide-react'
 
-interface DodumentListProps {
+interface DocumentListProps {
   parentDocumentId?: Id<'documents'>
   level?: number
   data?: Doc<'documents'>[]
@@ -17,8 +17,7 @@ interface DodumentListProps {
 export const DocumentList = ({
   parentDocumentId,
   level = 0,
-  data,
-}: DodumentListProps) => {
+}: DocumentListProps) => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
 
   const params = useParams()

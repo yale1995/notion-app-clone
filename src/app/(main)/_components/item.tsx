@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useMutation } from 'convex/react'
 import { api } from '../../../../convex/_generated/api'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { useUser } from '@clerk/clerk-react'
 
@@ -52,7 +52,7 @@ export const Item = ({
   onExpand,
 }: ItemProps) => {
   const { user } = useUser()
-  const router = useRouter()
+  // const router = useRouter()
 
   const ChevronIcon = expanded ? ChevronDown : ChevronRight
   const create = useMutation(api.documents.create)
@@ -92,7 +92,7 @@ export const Item = ({
       (documentId) => {
         if (!expanded) {
           onExpand?.()
-
+          console.log(documentId)
           // router.push(`documents/${documentId}`)
         }
       },
