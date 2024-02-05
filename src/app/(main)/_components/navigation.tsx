@@ -14,6 +14,7 @@ import { toast } from 'sonner'
 import { DocumentList } from './document-list'
 import { TrashBox } from './trash-box'
 import { useSearch } from '@/hooks/use-search'
+import { useSettings } from '@/hooks/use-settings'
 
 import {
   Fragment,
@@ -45,6 +46,7 @@ export const Navigation = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   const search = useSearch()
+  const settings = useSettings()
 
   const create = useMutation(api.documents.create)
 
@@ -160,9 +162,7 @@ export const Navigation = () => {
           <UserItem />
           <Item onClick={search.onOpen} label="Search" icon={Search} isSearch />
           <Item
-            onClick={() => {
-              console.log('work!!')
-            }}
+            onClick={settings.onOpen}
             label="Settings"
             icon={Settings}
             isSearch
